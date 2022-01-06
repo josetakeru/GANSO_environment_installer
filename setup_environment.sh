@@ -13,7 +13,7 @@ function_print_usage() {
 
 Welcome to the GANSO dependency installer. Script usage:
 
-    $> sudo ./ganso_dependency_installer.sh [OPTIONS]
+    $> sudo ./setup_environment.sh [OPTIONS]
 
 Available options:
     -o              - Install ONOS
@@ -26,9 +26,9 @@ Available options:
 
 Example:
 
-    $> sudo ./ganso_dependency_installer.sh -o -v 2.4.0 # Install ONOS version 2.4.0
-    $> sudo ./ganso_dependency_installer.sh -m -p # Install mininet and required packages
-    $> sudo ./ganso_dependency_installer.sh -t ./custom_topo.py -n mytopo # Run mininet with topology customTopo in file custom_topo.py
+    $> sudo ./setup_environment.sh -o -v 2.4.0 # Install ONOS version 2.4.0
+    $> sudo ./setup_environment.sh -m -p # Install mininet and required packages
+    $> sudo ./setup_environment.sh -t ./custom_topo.py -n mytopo # Run mininet with topology customTopo in file custom_topo.py
 
 EOF
 
