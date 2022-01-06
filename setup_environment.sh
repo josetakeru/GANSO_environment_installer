@@ -195,8 +195,15 @@ function_mininet_install_setup_and_run() {
 
 main () {
 
+    # Check if script is being run with sudo
     if [ "$(whoami)" != "root" ]; then 
         printf "\\n>>> You need root priviledges to run this script, please run with \'sudo\'\\n\\n>>> Exiting...\\n\\n"
+        exit 1
+    fi
+
+    # Check Linux distribution
+    if [[ "$(hostnamectl | grep -i 'Operating System')" != *"Ubuntu"* ]]; then 
+        printf "\\n>>> Environment host must be Ubuntu.\\n\\n>>> Exiting...\\n\\n"
         exit 1
     fi
 
@@ -222,6 +229,7 @@ main () {
         esac
     done
 
+    # Check if mininet options are correct
     if [ "${mn_custom_topo_file}" != "false" ] || [ "${mn_custom_topo_name}" != "false" ]; then
         if [ "${mn_custom_topo_file}" == "false" ] || [ "${mn_custom_topo_name}" == "false" ]; then
             printf "\\n>>> Please use -t CUSTOM_TOPO and -n TOPO_NAME simultaneously\\n\\n>>> Exiting...\\n\\n"
