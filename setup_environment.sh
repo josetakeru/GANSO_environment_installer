@@ -17,7 +17,7 @@ Welcome to the GANSO dependency installer. Script usage:
 
 Available options:
     -o              - Install ONOS
-    -v ONOS_VERSION - Installs specified ONOS version (requires option "-o"!) e.g. -o 2.0.0
+    -v ONOS_VERSION - Installs specified ONOS version (sets option "-o" automatically!) e.g. -o 2.0.0
     -m              - Install mininet latest
     -t CUSTOM_TOPO  - Use custom mininet topology (requires option "-n"!) e.g. -t ./custom_topo.py -n customTopo
     -n TOPO_NAME    - Set name of the custom topo (requires option "-t"!) e.g. -t ./custom_topo.py -n customTopo
@@ -236,6 +236,9 @@ main () {
             exit 1
         fi
     fi
+
+    # Fix onos_install variable if version is specified
+    if [ "${onos_version}" != "2.3.0" ]; then onos_install="true"; fi
 
     # Install environment's required packages
     if [ "${packages_install}" == "true" ]; then function_install_packages; fi
