@@ -1,4 +1,4 @@
-# GANSO installer
+# GANSO environment installer
 
 This script automates the installation, setting up and starting/stopping of the packages and programs required to run the [GANSO (GST And Network Slice Operator)](https://github.com/josetakeru/GANSO) **environment** (*note: you will still need to install python3 and the required modules to run GANSO itself*).
 
