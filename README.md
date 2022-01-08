@@ -8,7 +8,7 @@ GANSO leverages on the *[mininet](http://mininet.org/download/)* and *[ONOS](htt
 
 Running the script by itself will start both mininet and ONOS and stop them upon exiting *mininet* (*note: you need sudo priviledges to run the script since it installs packages and manages mininet*).
 
-    sudo ./setup_environment.sh
+    sudo ./setup_GANSO_environment.sh
 
 The script allows setting different *OPTIONS* that will be enforced before starting *mininet* and *ONOS*:
  * *-p*: Install required packages.
@@ -21,4 +21,4 @@ The script allows setting different *OPTIONS* that will be enforced before start
 
 For example, to install *ONOS* version 2.4.0 and start *mininet* with a custom topology found in */foo/bar* with name *custom_topo*:
 
-    sudo ./setup_environment.sh -v 2.4.0 -t /foo/bar/custom_topo.py -n custom_topo
+    sudo ./setup_GANSO_environment.sh -v 2.4.0 -t /foo/bar/custom_topo.py -n custom_topo
